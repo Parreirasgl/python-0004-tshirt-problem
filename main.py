@@ -32,8 +32,8 @@ fabric = 27
 cut = 24
 sewing = 45
 profit = 0
-list_a = []
-list_b = []
+list_shirts = []
+best_list_shirts = []
 shirt_a = 0
 shirt_b = 0
 
@@ -47,19 +47,20 @@ for i in range(100000):
             or (fabric >= 2 and cut >= 2 and sewing >= 3):
 
 # Sort which type of shirt to manufacture A or B, discount the material,...
-# ...add the profit, and place the shirt in the appropriate shirt list.
+# ...add the profit, and place the shirt in the shirt list.
 # Sortear qual tipo de camisa fabricar A ou B, descontar o material,...
-# ...adicionar o lucro, e colocar a camisa na lista de camisas apropriada.
+# ...adicionar o lucro, e colocar a camisa na lista de camisas.
         r = randint(1, 2)
         if r == 1:
             fabric -= 1.5
             cut -= 1.2
             sewing -= 2
             profit += 80
-            list_a.append("a")
+            list_shirts.append("a")
         else:
             fabric -= 2
             cut -= 2
             sewing -= 3
             profit += 120
-            list_b.append("b")
+            list_shirts.append("b")
+
