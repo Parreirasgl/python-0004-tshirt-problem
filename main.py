@@ -62,4 +62,4 @@ for i in range(100000):
             cut -= 2
             sewing -= 3
             profit += 120
-            list_a.append("b")
+            list_b.append("b")
