@@ -32,6 +32,7 @@ fabric = 27
 cut = 24
 sewing = 45
 profit = 0
+best_profit = 0
 list_shirts = []
 best_list_shirts = []
 shirt_a = 0
@@ -43,13 +44,12 @@ for i in range(100000):
 
 # Keep a loop as long as there is material for a shirt (either A or B).
 # Manter um loop enquanto houver material para uma camisa (seja A ou B).
-    while (fabric >= 1.5 and cut >= 1.2 and sewing >= 2) \
-            or (fabric >= 2 and cut >= 2 and sewing >= 3):
+    while (fabric >= 1.5 and cut >= 1.2 and sewing >= 2) or (fabric >= 2 and cut >= 2 and sewing >= 3):
 
 # Sort which type of shirt to manufacture A or B, discount the material,...
-# ...add the profit, and place the shirt in the shirt list.
+# ...add the profit, and place the shirt in the appropriate shirt list.
 # Sortear qual tipo de camisa fabricar A ou B, descontar o material,...
-# ...adicionar o lucro, e colocar a camisa na lista de camisas.
+# ...adicionar o lucro, e colocar a camisa na lista de camisas apropriada.
         r = randint(1, 2)
         if r == 1:
             fabric -= 1.5
@@ -64,3 +64,10 @@ for i in range(100000):
             profit += 120
             list_shirts.append("b")
 
+# If the profit of the while loop is greater than the biggest profit so far,...
+# ...add the profit to the highest profit, and add the t-shirt list to the best list.
+# Se o lucro do while loop for maior que maior lucro até o momento,...
+# ...adiconar o lucro ao maior lucro, e adicionar a lista de camisetas à melhor lista.
+    if profit > best_profit:
+        best_profit = profit
+        best_list_shirts = list_shirts
