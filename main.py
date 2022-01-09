@@ -28,6 +28,7 @@
 
 from random import randint
 
+SIMULATIONS = 100000
 fabric = 27
 cut = 24
 sewing = 45
@@ -37,10 +38,11 @@ list_shirts = []
 best_list_shirts = []
 shirt_a = 0
 shirt_b = 0
+counter = 0
 
 # Loop 100,000 simulations.
 # Fazer um loop com 100 mil simulações.
-for i in range(100000):
+for i in range(SIMULATIONS):
 
 # Keep a loop as long as there is material for a shirt (either A or B).
 # Manter um loop enquanto houver material para uma camisa (seja A ou B).
@@ -71,3 +73,22 @@ for i in range(100000):
     if profit > best_profit:
         best_profit = profit
         best_list_shirts = list_shirts
+
+# Reset values of variables.
+# Reiniciar valores das variáveis.
+    list_shirts = []
+    profit = 0
+    counter += 1
+    fabric = 27
+    cut = 24
+    sewing = 45
+
+# Add best shirt list content to shirt variables.
+# Adicionar conteúdo da melhor lista de camisetas às variáveis das camisetas.
+for i2 in best_list_shirts:
+    if i2 == "a":
+        shirt_a += 1
+    else:
+        shirt_b += 1
+
+
