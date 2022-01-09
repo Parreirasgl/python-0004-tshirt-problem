@@ -38,7 +38,7 @@ list_shirts = []
 best_list_shirts = []
 shirt_a = 0
 shirt_b = 0
-counter = 0
+counter_simulations = 0
 
 # Loop 100,000 simulations.
 # Fazer um loop com 100 mil simulações.
@@ -78,7 +78,7 @@ for i in range(SIMULATIONS):
 # Reiniciar valores das variáveis.
     list_shirts = []
     profit = 0
-    counter += 1
+    counter_simulations += 1
     fabric = 27
     cut = 24
     sewing = 45
@@ -91,4 +91,9 @@ for i2 in best_list_shirts:
     else:
         shirt_b += 1
 
-
+# Print results.
+# Imprimir resultados.
+print(f"Number of executed simulations: {counter_simulations}")
+print(f"The best profit was: {best_profit}")
+print("Number of type A T-shirts: " + str(shirt_a))
+print("Number of type B T-shirts: " + str(shirt_b))
